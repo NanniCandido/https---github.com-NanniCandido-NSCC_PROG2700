@@ -5,29 +5,6 @@ Description: Generate randomly 10 positive numbers and check if they are prime o
 By definition, a prime number is a positive integer divisible only for itself and 1
 */
 
-// function to get if the number is prime or not
-function isPrime(number) {
-    if (number <= 1)  // 1 or below are not prime number
-    {
-        return false;
-    } else if (number === 2) //the only even number which is prime
-    {
-        return true;
-    }
-
-    for (let i= 2; i < number; i++) 
-    { // Check if "number" is divisible by i without a remainder, it is not a prime number
-     if (number % i === 0) 
-     {
-        return false;
-      }    
-    } 
-    
-    // If number is only divided by itself and 1, it is a prime number
-    return true;   
-
-    }
-
 // Variables declaration
 let numArray = [];
 let resultIsPrime;
@@ -44,6 +21,7 @@ for (let i=0; i<10; i++)
 console.log(numArray);
 console.log("");
 
+// loop to check if number is prime or not
 for (let i=0; i<numArray.length; i++) 
 {
     resultIsPrime = isPrime(numArray[i]);
@@ -55,5 +33,30 @@ for (let i=0; i<numArray.length; i++)
         console.log(`Number ${numArray[i]} is no Prime!`);
     }
 }
+
+// function to know if the number is prime or not
+function isPrime(number) {
+    if (number <= 1)  // 1 or below are not prime number
+    {
+        return false;
+    } else if (number === 2) //the only even number which is prime
+    {
+        return true;
+    }
+
+    // loop to test if the number is prime
+    for (let i=2; i < number; i++) 
+    { // Check if "number" is divisible by i without a remainder, it is not a prime number
+     if (number % i === 0) 
+     {
+        return false;
+      }    
+    } 
+    
+    // If number is only divided by itself and 1, it is a prime number
+    return true;   
+
+    }
+
 
 
